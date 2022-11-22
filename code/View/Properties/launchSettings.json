@@ -8,7 +8,7 @@
     }
   },
   "profiles": {
-    "GitInsight.WASM": {
+    "GitInsight": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

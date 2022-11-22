@@ -25,7 +25,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GitInsight\GitInsight.csproj" />
     <ProjectReference Include="..\Models\Models.csproj" />
     <ProjectReference Include="..\REST\REST.csproj" />
     <ProjectReference Include="..\View\View.csproj" />

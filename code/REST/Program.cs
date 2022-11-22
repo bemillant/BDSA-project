@@ -17,8 +17,8 @@ class Program
         builder.Services.AddControllers();
         // builder.Services.AddDbContext<CommitTreeContext>();
         builder.Services.AddDbContext<CommitTreeContext>(opt =>
-            opt.UseInMemoryDatabase("inMemDB"));
-            
+            opt.UseSqlServer(Database.GetConnectionString()));
+        builder.Services.AddScoped<ICommitDataRepository, CommitDataRepository>();
         // builder.Services.AddCors(options => {
         //     options.AddPolicy("Open", builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
         // });
@@ -38,12 +38,17 @@ class Program
 
         app.UseHttpsRedirection();
 
-
         app.UseCors();
 
         app.UseAuthorization();
 
         app.MapControllers();
+
+        using (var scope = app.Services.CreateScope())
+        {
+            var context = scope.ServiceProvider.GetRequiredService<CommitTreeContext>();
+            Database.SetupDatabase(context);
+        }
 
         app.Run(); 
     }

@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "GitInsight.REST": {
+    "GitInsight": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
