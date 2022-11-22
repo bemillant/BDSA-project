@@ -1,4 +1,4 @@
-namespace GitInsight;
+namespace Models;
 
 public class CommitTreeContextFactory : IDesignTimeDbContextFactory<CommitTreeContext>
 {
@@ -10,7 +10,7 @@ public class CommitTreeContextFactory : IDesignTimeDbContextFactory<CommitTreeCo
 
         String connectionStringHardcode = "Server=localhost;Database=youthful_keller;User Id=sa;Password=Gruppen123;Trusted_Connection=False;Encrypt=False";
         var optionsBuilder = new DbContextOptionsBuilder<CommitTreeContext>();
-        optionsBuilder.UseSqlServer(connectionStringHardcode, b => b.MigrationsAssembly("GitInsight"));
+        optionsBuilder.UseSqlServer(connectionStringHardcode, b => b.MigrationsAssembly("Models"));
 
         return new CommitTreeContext(optionsBuilder.Options);
     }
