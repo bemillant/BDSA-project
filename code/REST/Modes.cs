@@ -1,6 +1,5 @@
 namespace REST;
-public enum Modes
-{
+public enum Modes {
     NULL,
     AUTHOR,
     FREQUENCY

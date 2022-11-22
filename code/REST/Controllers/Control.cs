@@ -1,7 +1,6 @@
 namespace REST.Controllers;
 
 using LibGit2Sharp;
-using static Modes;
 public class Control
 {
     private Data? _repo;
