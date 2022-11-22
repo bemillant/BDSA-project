@@ -1,5 +1,6 @@
-namespace GitInsight;
+namespace REST.Controllers;
 
+using LibGit2Sharp;
 using static Modes;
 public class Control
 {
@@ -32,7 +33,8 @@ public class Control
                     }
                     else
                     {
-                        _repo!.Print(_mode);
+                        Console.WriteLine("TODO: FIX THIS!!");
+                        //_repo!.Print(GetMode());
                     }
                     break;
                 case "newpath":

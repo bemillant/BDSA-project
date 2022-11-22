@@ -1,5 +1,4 @@
-namespace GitInsight;
-using static Modes;
+namespace REST;
 
 public class Data
 {
@@ -16,14 +15,14 @@ public class Data
         _repo = new Repository(Repository.Clone(url, "repoData/deleteMe"));
     }
 
-    public void Print(Modes mode)
+    public void Print(Mode mode)
     {
-        if (mode == FREQUENCY)
+        if (mode.Equals(Modes.FREQUENCY))
         {
             Console.WriteLine("Frequency:");
             PrintFreq();
         }
-        else if (mode == AUTHOR)
+        else if (mode.Equals(Modes.AUTHOR))
         {
             Console.WriteLine("Author: ");
             PrintAuth();

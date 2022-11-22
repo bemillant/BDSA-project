@@ -1,4 +1,4 @@
-namespace GitInsight;
+namespace REST;
 public enum Modes
 {
     NULL,
