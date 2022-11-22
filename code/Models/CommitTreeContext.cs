@@ -7,10 +7,8 @@ public sealed class CommitTreeContext : DbContext, ICommitTreeContext
     public DbSet<CommitData> CommitData => Set<CommitData>();
     
     //NOTE for later use, incase we need to specify type conversions susch as Enums.
-    //protected override void OnModelCreating(ModelBuilder modelBuilder) {
-    //    modelBuilder.Entity<CommitData>().
-    //}
-
-
-
+    protected override void OnModelCreating(ModelBuilder modelBuilder) {
+        modelBuilder.Entity<CommitData>()
+            .HasKey(h => h.HashCode);
+    }
 }
